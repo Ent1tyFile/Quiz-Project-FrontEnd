@@ -1,0 +1,82 @@
+<div class="wrapper">
+  <div class="main_title">Your most secure tool for quiz creation</div>
+  <div class="main_buttons">
+    <div class="create_quiz_btn_div">
+      <a class="create_quiz_btn" routerLink="/create-quiz">
+        <div
+          style="
+            color: #efefef;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 900;
+            font-size: 40px;
+            padding-bottom: 30px;
+            padding-top: 0px;
+          "
+        >
+          Create a
+        </div>
+        <div
+          style="
+            color: #efefef;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 900;
+            font-size: 60px;
+            padding-bottom: 40px;
+          "
+        >
+          Quiz
+        </div>
+        <svg class="plus_icon" viewBox="0 0 200 200">
+          <path
+            class="cls-1"
+            d="M100,200A100,100,0,1,1,200,100,100.11,100.11,0,0,1,100,200ZM100,5.28A94.72,94.72,0,1,0,194.72,100,94.83,94.83,0,0,0,100,5.28Zm0,163.12A11.45,11.45,0,0,1,88.56,157V111.44H43a11.44,11.44,0,1,1,0-22.88H88.56V43a11.44,11.44,0,1,1,22.88,0V88.56H157a11.44,11.44,0,1,1,0,22.88H111.44V157A11.45,11.45,0,0,1,100,168.4ZM43,93.84a6.16,6.16,0,1,0,0,12.32h50.8V157a6.16,6.16,0,1,0,12.32,0v-50.8H157a6.16,6.16,0,1,0,0-12.32h-50.8V43a6.16,6.16,0,1,0-12.32,0v50.8Z"
+          />
+        </svg>
+      </a>
+    </div>
+    <div class="take_quiz_div">
+      <div class="take_quiz_btn_div">
+        <button class="take_quiz_btn" (click)="takeQuiz()">
+          <div
+            style="
+              color: #efefef;
+              font-family: Arial, Helvetica, sans-serif;
+              font-weight: 900;
+              font-size: 40px;
+              margin-top: -18px;
+            "
+          >
+            Take a
+          </div>
+          <div
+            style="
+              color: #efefef;
+              font-family: Arial, Helvetica, sans-serif;
+              font-weight: 900;
+              font-size: 60px;
+              margin-top: -21px;
+            "
+          >
+            Quiz
+          </div>
+          <svg class="take_quiz_icon" viewBox="0 0 200 200">
+            <path
+              class="cls-1"
+              d="M90.65,152.75a2.63,2.63,0,0,1-1.86-.77L48.28,111.47A2.64,2.64,0,1,1,52,107.74l38.35,38.34,66.28-89a2.64,2.64,0,1,1,4.23,3.15l-68.1,91.42a2.63,2.63,0,0,1-1.93,1.05Z"
+            />
+            <path
+              class="cls-1"
+              d="M100,0A100,100,0,1,0,200,100,100.11,100.11,0,0,0,100,0Zm0,194.72A94.72,94.72,0,1,1,194.72,100,94.83,94.83,0,0,1,100,194.72Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <input
+        class="code_input"
+        [(ngModel)]="quizCode"
+        placeholder="Quiz code..."
+        #quizCodeInputRef
+      />
+    </div>
+  </div>
+</div>

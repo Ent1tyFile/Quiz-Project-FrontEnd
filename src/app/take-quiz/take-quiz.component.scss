@@ -1,0 +1,139 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+  padding-top: 10px;
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.form_contents {
+  padding: 38px 116px 28px 116px;
+  border: 0;
+  border-radius: 10px;
+  background-color: #e5e5e5;
+}
+
+.answer {
+  width: 100%;
+
+  border: 0;
+  outline: 0;
+  padding: 0;
+  background-color: transparent;
+  height: 35px;
+  padding-left: 5.5px;
+
+  text-align: left;
+
+  display: grid;
+  grid-template-columns: 45px 1fr;
+  column-gap: 4px;
+
+  > * {
+    background-color: white;
+    border-radius: 6px;
+    padding: 0px;
+    height: 100%;
+  }
+
+  &.selected > * {
+    background-color: #3f4056;
+    color: white;
+  }
+
+  &.correct-answer > * {
+    background-color: #697f2d;
+    color: white;
+  }
+
+  &.incorrect-selected-answer > * {
+    background-color: #d33f49;
+    color: white;
+  }
+
+  .answer-char {
+    text-align: center;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  width: 80%;
+}
+
+.title_div {
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  color: #39393f;
+  font-size: 1.7em;
+  padding: 0 10px 0 40px;
+}
+
+.submit_button {
+  box-shadow: none;
+  background-color: #3f4056;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #efefef;
+  font-weight: 900;
+  height: 50px;
+  border-radius: 7px;
+  width: 100px;
+}
+
+.submit_button:hover {
+  background-color: rgba($color: #3f4056, $alpha: 0.93);
+}
+
+.question-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  color: #39393f;
+  font-size: 1.7em;
+  padding-left: 5px;
+}
+
+.answer-char {
+  display: flex;
+  padding: 0 8px 0 16px;
+  font-family: "Abril Fatface", cursive;
+  font-size: 20px;
+  color: #4f5162;
+  width: 35px;
+  justify-content: center;
+  align-items: center;
+}
+
+.question-num {
+  position: absolute;
+  top: 39px;
+  left: 40px;
+  font-size: 32px;
+  font-family: "Abril Fatface", cursive;
+  color: #39393f;
+}
+
+.question-content {
+  padding-top: 36px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.answer_value {
+  display: flex;
+  align-items: center;
+  padding: 0 25px !important;
+  color: #3f4056;
+  font-size: 15px;
+}

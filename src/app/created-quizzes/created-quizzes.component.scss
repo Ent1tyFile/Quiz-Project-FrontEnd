@@ -1,0 +1,88 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+  padding-top: 10px;
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+
+  ::ng-deep .mat-mdc-card-header-text {
+    display: none;
+  }
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  input {
+    padding: 10px;
+  }
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 48px;
+  align-items: center;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.mat-divider {
+  margin-bottom: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  width: 80%;
+}
+
+.title_div {
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  color: #39393f;
+  font-size: 1.7em;
+  padding: 0 10px 0 40px;
+}
+
+.add_quiz_btn {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: #39393f;
+  height: 50px;
+  border-radius: 7px;
+  width: 170px;
+}
+
+.quiz_block {
+  height: 100px;
+  background-color: #e5e5e5;
+  display: grid;
+  align-items: center;
+  border-radius: 10px;
+  padding: 0 30px 0 60px;
+}
+
+.quiz_title {
+  font-size: 22px;
+  color: #3087b4;
+}
+
+.items_header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 48px;
+  align-items: center;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 30px 40px 60px;
+}

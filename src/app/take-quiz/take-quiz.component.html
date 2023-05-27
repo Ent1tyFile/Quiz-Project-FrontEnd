@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="content">
+    <div class="header">
+      <div class="title_div">{{ quizTitle }}</div>
+
+      <div class="actions">
+        <button
+          [disabled]="numAnswered !== questions.length || quizResult"
+          mat-raised-button
+          color="primary"
+          type="button"
+          class="submit_button"
+          (click)="submit()"
+        >
+          <ng-container *ngIf="quizResult">{{
+            numCorrect + "/" + questions.length
+          }}</ng-container>
+          <ng-container *ngIf="!quizResult">
+            {{
+              numAnswered === questions.length
+                ? "Submit"
+                : numAnswered + "/" + questions.length
+            }}
+          </ng-container>
+        </button>
+      </div>
+    </div>
+    <div class="questions">
+      <mat-card
+        appearance="outlined"
+        class="form_contents"
+        *ngFor="let question of questions; let qIdx = index"
+      >
+        <span class="question-num">#{{ qIdx + 1 }}</span>
+        <div>
+          <div class="question-title">
+            {{ question.title }}
+          </div>
+          <div class="question-content">
+            <button
+              *ngFor="let answer of question.answers; let aIdx = index"
+              class="answer"
+              [ngClass]="{
+              'selected': question.selected === aIdx,
+              'correct-answer': quizResult && quizResult[qIdx].correct === aIdx,
+              'incorrect-selected-answer': quizResult && quizResult[qIdx].selected === aIdx && quizResult[qIdx].correct !== aIdx,
+            }"
+              [disabled]="quizResult"
+              (click)="question.selected = aIdx"
+            >
+              <div
+                class="answer-char"
+                [style.cursor]="quizResult ? 'auto' : 'pointer'"
+              >
+                <span>{{ getChar(aIdx) }}</span>
+              </div>
+              <div
+                class="answer_value"
+                [style.cursor]="quizResult ? 'auto' : 'pointer'"
+              >
+                <span>
+                  {{ answer.value }}
+                </span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

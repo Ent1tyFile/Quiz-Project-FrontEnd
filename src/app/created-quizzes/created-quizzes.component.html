@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="content">
+    <div class="header">
+      <div class="title_div">My Quizzes</div>
+
+      <div class="actions">
+        <a
+          mat-button
+          class="add_quiz_btn"
+          type="button"
+          routerLink="/create-quiz"
+        >
+          + Create New Quiz
+        </a>
+      </div>
+    </div>
+
+    <div class="items_header">
+      <span>Title</span>
+      <span>Date</span>
+      <span>Code</span>
+      <div></div>
+    </div>
+
+    <div class="questions">
+      <div *ngFor="let quiz of quizzes">
+        <div class="quiz_block">
+          <div class="item">
+            <a class="quiz_title" [routerLink]="'/edit-quiz/' + quiz.code">{{
+              quiz.title
+            }}</a>
+            <span>{{ quiz.date | date }}</span>
+            <span>{{ quiz.code }}</span>
+            <div>
+              <button mat-icon-button type="button" (click)="deleteQuiz(quiz)">
+                <mat-icon>close</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

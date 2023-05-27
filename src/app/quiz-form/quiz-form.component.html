@@ -1,0 +1,132 @@
+<div class="container">
+  <div class="content">
+    <div class="header">
+      <div class="title_div">Quiz Title:</div>
+
+      <input
+        class="quiz-title"
+        [(ngModel)]="quizTitle"
+        placeholder="Quiz Title..."
+        required
+        type="text"
+        #quizTitleInputRef
+      />
+
+      <div class="actions">
+        <button
+          mat-button
+          class="add_question_btn"
+          type="button"
+          (click)="addNewQuestion()"
+        >
+          + Add new question
+        </button>
+        <button
+          mat-raised-button
+          class="publish_button"
+          color="primary"
+          type="button"
+          (click)="submit()"
+        >
+          {{ quizCode ? "Save" : "Publish" }}
+        </button>
+      </div>
+    </div>
+
+    <div class="questions">
+      <mat-card
+        appearance="outlined"
+        class="form_contents"
+        *ngFor="let question of questions; let qIdx = index"
+      >
+        <span class="question-num">#{{ qIdx + 1 }}</span>
+        <mat-card-header class="question-header">
+          <input
+            matInput
+            class="question_input"
+            type="text"
+            [(ngModel)]="question.title"
+            placeholder="Your question here..."
+          />
+          <div>
+            <button
+              [disabled]="question.answers.length === 20"
+              class="add_answer_btn"
+              [ngClass]="{ disabled: question.answers.length === 20 }"
+              type="button"
+              (click)="addNewAnswer(question)"
+            >
+              + More answers
+            </button>
+            <button
+              [disabled]="questions.length === 1"
+              mat-icon-button
+              type="button"
+              (click)="removeQuestion(question)"
+            >
+              <mat-icon>close</mat-icon>
+            </button>
+          </div>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="answers">
+            <div
+              class="row"
+              *ngFor="let answer of question.answers; let aIdx = index"
+            >
+              <span class="answer-char">{{ getChar(aIdx) }}</span>
+              <div>
+                <input
+                  type="text"
+                  class="answer_input"
+                  [(ngModel)]="answer.value"
+                  placeholder="Answer"
+                />
+              </div>
+              <div class="answer_actions">
+                <button
+                  [ngClass]="{ checked: answer.correct }"
+                  (click)="selectCorrectAnswer(question, answer)"
+                  type="button"
+                  class="correct-answer-button"
+                >
+                  <svg viewBox="0 0 200 200">
+                    <defs></defs>
+                    <path
+                      class="check_icon"
+                      d="M88.81,147.07a11.36,11.36,0,0,1-8.06-3.34l-32-32A11.39,11.39,0,0,1,64.9,95.66L87.54,118.3,133.4,56.74a11.4,11.4,0,1,1,18.28,13.61L98,142.49A11.46,11.46,0,0,1,89.63,147Z"
+                    />
+                  </svg>
+                </button>
+                <button
+                  class="remove_answer_button"
+                  [disabled]="question.answers.length === 1"
+                  type="button"
+                  (click)="removeAnswer(question, answer)"
+                >
+                  <svg viewBox="0 0 200 200">
+                    <path
+                      class="cls-1"
+                      d="M116.06,100l27.3-27.3A11.36,11.36,0,1,0,127.3,56.64L100,83.94,72.7,56.64A11.36,11.36,0,0,0,56.64,72.7L83.94,100l-27.3,27.3A11.36,11.36,0,1,0,72.7,143.36l27.3-27.3,27.3,27.3a11.36,11.36,0,1,0,16.06-16.06Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="actions">
+            <button
+              [disabled]="question.answers.length === 20"
+              class="add_answer_btn"
+              [ngClass]="{ disabled: question.answers.length === 20 }"
+              type="button"
+              (click)="addNewAnswer(question)"
+            >
+              + More answers
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

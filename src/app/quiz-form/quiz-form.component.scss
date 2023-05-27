@@ -1,0 +1,253 @@
+.header {
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+
+  column-gap: 30px;
+
+  ::ng-deep .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+  }
+}
+
+.quiz-title {
+  padding: 0 25px;
+  border-radius: 6px;
+  border: 0;
+  height: 45px;
+  font-weight: 700;
+  font-size: 19px;
+  color: #3f4056;
+  padding-top: 3px;
+}
+
+//fafbfc 3f4056
+
+.title_div {
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  color: #39393f;
+  font-size: 1.7em;
+  padding: 0 10px 0 40px;
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  padding: 16px 0px 0 16px;
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  ::ng-deep .mat-mdc-card-header-text {
+    display: none;
+  }
+}
+
+.add_question_btn {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: #39393f;
+  height: 50px;
+  border-radius: 7px;
+}
+
+.add_answer_btn {
+  all: unset;
+  color: #3087b4;
+  cursor: pointer;
+  width: 105px;
+  font-family: Arial, Helvetica, sans-serif;
+
+  &.disabled {
+    color: #adadad;
+  }
+}
+
+.add_answer_btn:hover {
+  color: rgba(#3087b4, 0.8);
+  &.disabled {
+    color: #adadad;
+  }
+}
+
+.quiz_input {
+  width: 100%;
+  border: 0;
+  border-radius: 6px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.question_input {
+  padding: 11px 15px 9px 25px;
+  width: 100%;
+  border: 0;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  height: 20px;
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4f5162;
+  font-weight: 500;
+}
+
+.answer_input {
+  padding: 0 25px 0 25px;
+  box-sizing: border-box;
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  height: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4f5162;
+  font-size: 15px;
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.form_contents {
+  padding: 10px 100px 10px 100px;
+  border: 0;
+  border-radius: 10px;
+  background-color: #e5e5e5;
+}
+
+.answers {
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  row-gap: 10px;
+  align-items: center;
+  column-gap: 8px;
+
+  .header {
+    display: contents;
+    font-weight: 500;
+  }
+
+  .row {
+    display: contents;
+  }
+
+  .divider {
+    grid-column: 1 / span 3;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.answer_actions {
+  display: flex;
+  gap: 8px;
+}
+
+.answer-char {
+  padding: 0 16px 0 16px;
+  font-family: "Abril Fatface", cursive;
+  font-size: 20px;
+  color: #4f5162;
+}
+
+.question-num {
+  position: absolute;
+  top: 39px;
+  left: 40px;
+  font-size: 32px;
+  font-family: "Abril Fatface", cursive;
+  color: #39393f;
+}
+
+.correct-answer-button {
+  width: 35px; /* Adjust the size of the SVG icon */
+  height: 35px;
+  vertical-align: middle;
+  fill: #697f2d; /* Change the color of the SVG icon */
+  background-color: #c7d2c1;
+  border-radius: 5px;
+  border: 0;
+  outline: none;
+  padding: 0;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(#697f2d, 0.3);
+  }
+
+  &.checked {
+    fill: #c7d2c1; /* Change the color of the SVG icon when checked */
+    background-color: #697f2d;
+  }
+}
+
+.check_box_div label span {
+  vertical-align: middle;
+}
+
+.remove_answer_button {
+  all: unset;
+  height: 35px;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #d8d8d8;
+  border-radius: 5px;
+
+  svg {
+    fill: #3f4056;
+  }
+
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  &:hover {
+    background-color: rgba(#3f4056, 0.2);
+  }
+}
+
+.publish_button {
+  box-shadow: none;
+  background-color: #3f4056;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  height: 50px;
+  border-radius: 7px;
+  width: 100px;
+}
+
+.publish_button:hover {
+  background-color: rgba($color: #3f4056, $alpha: 0.93);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  width: 80%;
+}
